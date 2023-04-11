@@ -12,10 +12,9 @@ const Map = ({ info }: any) => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            {info &&
-                <Marker position={[info?.location?.lat, info?.location?.lng]} draggable={true}>
-                    <Popup>Hey! I live here</Popup>
-                </Marker>}
+            <Marker position={[info ? info?.location?.lat : 33.68, info ? info?.location?.lng : 73.04]} draggable={true}>
+                <Popup>Hey! I live here</Popup>
+            </Marker>
         </MapContainer>
     )
 }

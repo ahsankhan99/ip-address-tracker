@@ -9,10 +9,12 @@ const Header = ({ setInfo }: any) => {
     }, [])
 
     const clickHandler = async () => {
+        if (ip === '') {
+            return;
+        }
 
         const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.NEXT_PUBLIC_MAP_API}&ipAddress=${ip}&domain=${ip}`);
         const data = await response.json();
-        console.log(data);
         setInfo(data);
     }
 

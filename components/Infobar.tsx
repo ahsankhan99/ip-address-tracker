@@ -2,6 +2,7 @@ import React from 'react'
 
 const Infobar = ({ info }: any) => {
 
+
     return (
         <section className='grid grid-cols-1 rounded-lg top-40 absolute right-0 left-0 z-20 mx-auto p-4 bg-white w-[70%] h-72 md:h-32  md:grid-cols-4'>
             <div className='text-center text-xl font-semibold'>

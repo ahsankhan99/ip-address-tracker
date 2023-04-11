@@ -1,23 +1,23 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head';
 import dynamic from "next/dynamic";
 import Infobar from '@/components/Infobar';
 import Header from '@/components/Header';
 
-function MapNoSSR() {
+function MapNoSSR({ info }: any) {
   const MapWithNoSSR = dynamic(() => import("../components/Map"), {
     ssr: false
   });
 
   return (
     <div id="map" className='h-[70vh]'>
-      <MapWithNoSSR />
+      <MapWithNoSSR info={info} />
     </div>
   );
 }
 
 export default function Home() {
-
+  const [info, setInfo] = useState(null);
 
   return (
     <>
@@ -28,9 +28,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='w-full h-[100vh] relative'>
-        <Header />
-        <Infobar />
-        <MapNoSSR />
+        <Header setInfo={setInfo} />
+        <Infobar info={info} />
+        <MapNoSSR info={info} />
       </main >
     </>
   )

@@ -10,7 +10,7 @@ const Infobar = ({ info }: any) => {
             </div>
             <div className='text-center text-xl font-semibold'>
                 <h4 className='text-center text-secondary text-sm sm:mb-4 border-secondary sm:border-l-[0.5px]'>LOCATION</h4>
-                <h2>{info?.location?.region}, {info?.location?.country}</h2>
+                {info && <h2>{info?.location?.region}, {info?.location?.country}</h2>}
             </div>
             <div className='text-center text-xl font-semibold'>
                 <h4 className='text-center text-secondary text-sm sm:mb-4 border-secondary sm:border-l-[0.5px]'>TIMEZONE</h4>
